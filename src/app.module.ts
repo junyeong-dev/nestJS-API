@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
+// @~ : nestjs에서는 데코레이션 이라고 명명
 @Module({
   imports: [],
   controllers: [AppController],
