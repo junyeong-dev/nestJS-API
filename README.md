@@ -6,3 +6,7 @@ create project
 
 start project
 - npm run start:dev
+
+create controller
+- nest generate controller 
+- nest g co
