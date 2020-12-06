@@ -7,6 +7,10 @@ create project
 start project
 - npm run start:dev
 
-create controller
+create controller - movies
 - nest generate controller 
 - nest g co
+
+create service - movies
+- nest generate service
+- nest g s
