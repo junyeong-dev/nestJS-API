@@ -14,11 +14,6 @@ export class MoviesController {
         return this.movieService.getAll();
     }
 
-    @Get('search')
-    search(@Query('year') searchingYear: string) {
-        return `Search movies after ${ searchingYear }` ;
-    }
-
     // :getOne함수가 search함수보다 위에 있을 경우 url을 id로 착각하기 때문에 :id를 밑으로 둠
     @Get(':id')
     getOne(@Param('id') id: string): Movie {
@@ -27,12 +22,12 @@ export class MoviesController {
 
     @Post()
     create(@Body() movieData) {
-        return movieData;
+        return this.movieService.create(movieData);
     }
 
     @Delete(':id')
     remove(@Param('id') id: string) {
-        return 'Delete a movie';
+        return this.movieService.deleteOne(id);
     }
 
     @Patch(':id')
