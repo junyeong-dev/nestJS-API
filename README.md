@@ -1,6 +1,12 @@
 install nestjs
 - npm i -g @nestjs/cli
 
+install class-validator
+- npm i class-validator
+
+install class-transformer
+- npm i class-transformer
+
 create project
 - nest new (project name)
 
