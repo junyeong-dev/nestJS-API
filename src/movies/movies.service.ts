@@ -10,7 +10,7 @@ export class MoviesService {
         return this.movies;
     }
 
-    getOne(id: string): Movie {
+    getOne(id: number): Movie {
         // +id 는 parseInt(id)와 같음
         const movie = this.movies.find(movie => movie.id === +id);
         if(!movie) {
@@ -19,9 +19,9 @@ export class MoviesService {
         return movie;
     }
 
-    deleteOne(id: string): boolean {
+    deleteOne(id: number): boolean {
         this.getOne(id);
-        this.movies = this.movies.filter(movie => movie.id !== +id);
+        this.movies = this.movies.filter(movie => movie.id !== id);
         return true;
     }
 
@@ -32,7 +32,7 @@ export class MoviesService {
         });
     }
 
-    update(id: string, updateData) {
+    update(id: number, updateData) {
         const movie = this.getOne(id);
         this.deleteOne(id);
         this.movies.push({ ...movie, ...updateData });

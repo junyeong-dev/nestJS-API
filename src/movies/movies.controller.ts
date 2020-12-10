@@ -17,7 +17,7 @@ export class MoviesController {
 
     // :getOne함수가 search함수보다 위에 있을 경우 url을 id로 착각하기 때문에 :id를 밑으로 둠
     @Get(':id')
-    getOne(@Param('id') movieId: string): Movie {
+    getOne(@Param('id') movieId: number): Movie {
         return this.movieService.getOne(movieId);
     }
 
@@ -27,12 +27,12 @@ export class MoviesController {
     }
 
     @Delete(':id')
-    remove(@Param('id') movieId: string) {
+    remove(@Param('id') movieId: number) {
         return this.movieService.deleteOne(movieId);
     }
 
     @Patch(':id')
-    patch(@Param('id') movieId: string, @Body() updateData) {
+    patch(@Param('id') movieId: number, @Body() updateData) {
         return this.movieService.update(movieId, updateData);
     }
 
