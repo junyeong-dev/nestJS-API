@@ -7,6 +7,9 @@ install class-validator
 install class-transformer
 - npm i class-transformer
 
+install mapped-types
+- npm i @nestjs/mapped-types
+
 create project
 - nest new (project name)
 
