@@ -23,3 +23,7 @@ create controller - movies
 create service - movies
 - nest generate service
 - nest g s
+
+create module - movies
+- nest generate module
+- nest g mo
