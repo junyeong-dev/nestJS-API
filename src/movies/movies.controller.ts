@@ -11,6 +11,20 @@ export class MoviesController {
 
     }
 
+    /* 
+        NestJS는 Express 위에서 돌아감
+        NestJS는 2개의 프레임워크랑 작동
+        Express와 Fastify
+        기본적으로 Express에서 돌아가지만 Fastify로 변경할 수 있음
+        성능 향상을 위해서는 Fastify가 최고
+        
+        getAll(@Req() req, @Res() res): Movie[] {
+            res.json
+        }
+        위와 같이 플랫폼이나 어플리케이션에 Req, Res 같은 데코레이터를 이용해 Express에 접근할 수 있음
+        하지만 추천하지는 않음
+        Fastify는 위와 같은 방법을 사용하지 않음
+    */
     @Get()
     getAll(): Movie[] {
         return this.movieService.getAll();
