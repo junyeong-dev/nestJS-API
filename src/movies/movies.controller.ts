@@ -7,9 +7,7 @@ import { UpdateMovieDto } from './dto/update-movie.dto';
 @Controller('movies')
 export class MoviesController {
 
-    constructor(private readonly movieService: MoviesService) {
-
-    }
+    constructor(private readonly movieService: MoviesService) { }
 
     /* 
         NestJS는 Express 위에서 돌아감
@@ -31,6 +29,7 @@ export class MoviesController {
     }
 
     // :getOne함수가 search함수보다 위에 있을 경우 url을 id로 착각하기 때문에 :id를 밑으로 둠
+    // url은 /movies/{id} 
     @Get(':id')
     getOne(@Param('id') movieId: number): Movie {
         return this.movieService.getOne(movieId);
