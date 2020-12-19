@@ -50,4 +50,41 @@ describe('MoviesService', () => {
     });
   });
 
+  describe('deleteOne', () => {
+    it('deletes a movie', () => {
+      service.create({
+        title: 'Test',
+        genres: ['T', 'E', 'S', 'T'],
+        year: 2020
+      });
+      const allMovies = service.getAll().length;
+      service.deleteOne(1);
+      const afterDelete = service.getAll().length;
+      expect(afterDelete).toBeLessThan(allMovies);
+    });
+
+    it('should throw 404 error', () => {
+      try {
+        service.deleteOne(999);
+      } catch(e) {
+        expect(e).toBeInstanceOf(NotFoundException);
+      }
+    });
+  });
+
+  describe('create', () => {
+    it('should create a movie', () => {
+      const beforeCreate = service.getAll().length;
+      service.create({
+        title: 'Test',
+        genres: ['T', 'E', 'S', 'T'],
+        year: 2020
+      });
+      const afterCreate = service.getAll().length;
+      expect(afterCreate).toBeGreaterThan(beforeCreate);
+    });
+
+
+  });
+
 });
