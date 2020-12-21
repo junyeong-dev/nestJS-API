@@ -38,3 +38,4 @@ Test
 
 - 유닛(Unit) 테스트 - function을 따로 테스트
 - e2e(End To End) 테스트 - 사용자의 입장에서 테스트 하는 것(사용자에게 직접 노출되는 부분을 점검한다고 생각하면 됨)
+- npm run test:e2e
